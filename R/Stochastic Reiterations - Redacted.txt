@@ -12,7 +12,7 @@ rm(list=ls())
 #This assumption can be changed by changing the type of random number that's generated for each bucket, or applying a weight on the payout ratios.
 
 
-ladata <- read.csv("C:\\Users\\badewunm\\Desktop\\Data Requests\\Louisiana 2016 Coverage & Payout.csv")
+ladata <- read.csv(".csv")
 library(ggplot2)
 library(utils)
 
