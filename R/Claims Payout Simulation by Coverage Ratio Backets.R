@@ -3,7 +3,7 @@
 rm(list=ls())
 
 
-ladata <- read.csv("C:\\Users\\badewunm\\Desktop\\Data Requests\\Louisiana 2016 Coverage & Payout.csv")
+ladata <- read.csv(".csv")
 library(ggplot2)
 library(utils)
 
