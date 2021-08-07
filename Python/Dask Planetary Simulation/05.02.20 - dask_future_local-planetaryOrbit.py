@@ -25,8 +25,6 @@ SCALE = 250 / AU
 ##Check and set the correct/current directory
 print("Current working directory -" , os.getcwd())
 
-#working_directory = "C:\\Users\\bahir\\Desktop\\CSI 702\\Final Project"
-# working_directory = "C:/Users/swanb/Documents/GMU Classes/CSI703/Project"
 
 ##Read in the data from the current directory
 #List of datasets with bodies for the simulation
@@ -43,7 +41,7 @@ infile = "object_list_500_objects.csv"
 if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
     csv_path = sys.argv[1]
 else:
-    csv_path = "C:/Users/bahir/Desktop/CSI 702/Final Project/"+ infile
+    csv_path = "C:/"+ infile
     
 #data = pd.read_csv("object_list-*-*.csv", index_col=0, dtype={ "name":str, "mass":float, "px":float, "py":float, "vx":float, "vy":float, "total_fx":float, "total_fy":float}
 init_df = pd.read_csv(csv_path, encoding='utf-8', dtype={ "name":str, "mass":float, "px":float, "py":float, "vx":float, "vy": float, "total_fx":float, "total_fy":float})
@@ -135,7 +133,7 @@ def main():
             append_step = remote_df.loc[planet_checklist,'name':'vy']
             append_step["step"] = step
             print("Saving Future Results to Memory")
-            append_step.to_csv('/home/badewunm/env/'+str(step)+'th_step_results_'+str(len(remote_df))+'bodies_future.csv')
+            append_step.to_csv('/env/'+str(step)+'th_step_results_'+str(len(remote_df))+'bodies_future.csv')
         remote_df = client.scatter(remote_df, broadcast=True) 
         step += 1
     print("Time of the simulation", process_time()-start_time, " seconds")
