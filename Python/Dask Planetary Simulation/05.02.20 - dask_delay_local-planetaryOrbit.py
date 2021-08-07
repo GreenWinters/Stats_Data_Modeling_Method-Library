@@ -49,7 +49,7 @@ infile = "object_list_500_objects.csv"
 if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
     csv_path = sys.argv[1]
 else:
-    csv_path = "C:/Users/bahir/Desktop/CSI 702/Final Project/"+ infile
+    csv_path = "C:/"+ infile
     
 init_df = pd.read_csv(csv_path, dtype={ "name":str, "mass":float, "px":float, "py":float, "vx":float, "vy": float, "total_fx":float, "total_fy":float})
 init_df = init_df.set_index('index')
@@ -125,7 +125,7 @@ def main():
     print("Time of the Delay Local simulation", process_time()-start_time, " seconds")
     print("Saving Delay Results to Memory")
     #Save Planets' 500th results to file
-    rolling_df.to_csv('/home/badewunm/env/'+str(step)+'th_step_results_'+str(len(init_df))+'bodies_delay.csv')
+    rolling_df.to_csv('env/'+str(step)+'th_step_results_'+str(len(init_df))+'bodies_delay.csv')
    
 
 if __name__ == "__main__":
