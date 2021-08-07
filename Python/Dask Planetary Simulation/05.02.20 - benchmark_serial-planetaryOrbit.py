@@ -34,7 +34,7 @@ infile = "object_list_500_objects.csv"
 if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
     csv_path = sys.argv[1]
 else:
-    csv_path = r'C:\\Users\\bahir\\Desktop\\CSI 702\\Final Project'+infile
+    csv_path = r'C:\\'+infile
 
 init_df = pd.read_csv(csv_path, dtype={ "name":str, "mass":float, "px":float, "py":float, "vx":float, "vy": float, "total_fx":float, "total_fy":float})
 init_df = init_df.set_index('index')
